@@ -243,8 +243,9 @@
 
     .photo-wrap img {
       width: 100%;
-      aspect-ratio: 1 / 1.05;
+      aspect-ratio: 1 / 1.25;
       object-fit: cover;
+      object-position: center top;
       display: block;
     }
 
@@ -541,6 +542,81 @@
       box-shadow: 0 10px 22px rgba(31, 78, 121, 0.05);
     }
 
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .study-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(31, 78, 121, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .study-card::before {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -52px;
+      top: -52px;
+      border-radius: 36px;
+      background: linear-gradient(135deg, rgba(94, 183, 214, 0.20), rgba(255, 209, 102, 0.24));
+      transform: rotate(14deg);
+    }
+
+    .study-card h3 {
+      color: var(--blue-dark);
+      font-size: 1.25rem;
+      line-height: 1.22;
+      margin-bottom: 18px;
+      max-width: 92%;
+    }
+
+    .study-group {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(31, 78, 121, 0.09);
+    }
+
+    .study-group strong {
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .study-card ul {
+      margin-left: 18px;
+    }
+
+    .study-card li {
+      color: var(--muted);
+      margin-bottom: 7px;
+    }
+
+    .path-note {
+      margin-top: 28px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      color: white;
+      border-radius: 26px;
+      padding: 24px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .path-note strong {
+      color: var(--yellow);
+    }
+
     .timeline {
       position: relative;
       display: grid;
@@ -633,6 +709,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+
       .timeline-item {
         grid-template-columns: 1fr;
       }
@@ -648,12 +728,14 @@
       }
 
       .skills-grid,
-      .kpi-row {
+      .kpi-row,
+      .resources-grid {
         grid-template-columns: 1fr;
       }
 
       .glass,
       .edf-box,
+      .study-card,
       .contact-box {
         padding: 26px;
       }
@@ -674,6 +756,7 @@
         <a href="#edf">EDF</a>
         <a href="#projects">Projets</a>
         <a href="#skills">Compétences</a>
+        <a href="#resources">Ressources & SAE</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -862,6 +945,109 @@
           <span>MySQL</span>
           <span>Tableau</span>
           <span>Copilot</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">BUT Science des Données</div>
+          <h2>Ressources & SAE (travaux de groupe).</h2>
+        </div>
+
+        <div class="resources-grid">
+          <article class="study-card">
+            <h3>Traiter des données à des fins décisionnelles</h3>
+            <div class="study-group">
+              <strong>Ressources marquantes</strong>
+              <ul>
+                <li>Tableur, reporting et datavisualisation</li>
+                <li>Bases de données relationnelles, SQL et NoSQL</li>
+                <li>Systèmes d’information décisionnels et datawarehouse</li>
+                <li>Big Data : enjeux, stockage et extraction</li>
+              </ul>
+            </div>
+            <div class="study-group">
+              <strong>SAE principales</strong>
+              <ul>
+                <li>Reporting à partir de données stockées dans un SGBD relationnel</li>
+                <li>Conception et implémentation d’une base de données</li>
+                <li>Intégration de données dans un datawarehouse</li>
+                <li>Migration de données vers ou depuis un environnement NoSQL</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="study-card">
+            <h3>Analyser statistiquement les données</h3>
+            <div class="study-group">
+              <strong>Ressources marquantes</strong>
+              <ul>
+                <li>Statistique descriptive, probabilités et statistique inférentielle</li>
+                <li>Tests d’hypothèses pour l’analyse bi-variée</li>
+                <li>Méthodes factorielles et classification automatique</li>
+                <li>Data mining et méthodes statistiques pour le Big Data</li>
+              </ul>
+            </div>
+            <div class="study-group">
+              <strong>SAE principales</strong>
+              <ul>
+                <li>Préparation et synthèse d’un tableau de données</li>
+                <li>Estimation par échantillonnage et régression sur données réelles</li>
+                <li>Description et prévision de données temporelles</li>
+                <li>Mise en œuvre d’un processus de Datamining</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="study-card">
+            <h3>Valoriser une production dans un contexte professionnel</h3>
+            <div class="study-group">
+              <strong>Ressources marquantes</strong>
+              <ul>
+                <li>Communication, sémiologie et valorisation de résultats</li>
+                <li>Données de l’environnement entrepreneurial et économique</li>
+                <li>Exploration et valorisation de la donnée dans un cadre juridique</li>
+                <li>Communication des données, éthique et responsabilité</li>
+              </ul>
+            </div>
+            <div class="study-group">
+              <strong>SAE principales</strong>
+              <ul>
+                <li>Datavisualisation et construction d’indicateurs de performance</li>
+                <li>Présentation en anglais d’un territoire économique et culturel</li>
+                <li>Conformité réglementaire pour analyser des données</li>
+                <li>Stage, alternance, portfolio et productions professionnelles</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="study-card">
+            <h3>Modéliser les données dans un cadre statistique</h3>
+            <div class="study-group">
+              <strong>Ressources marquantes</strong>
+              <ul>
+                <li>Techniques de sondage et méthodologie d’enquête</li>
+                <li>Modèle linéaire et modélisation statistique avancée</li>
+                <li>Apprentissage statistique pour l’IA</li>
+                <li>Options Python / IA et renforcement mathématique</li>
+              </ul>
+            </div>
+            <div class="study-group">
+              <strong>SAE principales</strong>
+              <ul>
+                <li>Recueil et analyse de données par échantillonnage ou plan d’expérience</li>
+                <li>Expliquer ou prédire une variable quantitative à partir de plusieurs facteurs</li>
+                <li>Mener une étude statistique dans un domaine d’application</li>
+                <li>Modélisation statistique pour les données complexes et le Big Data</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="path-note">
+          <p><strong>Parcours EMS :</strong> à partir du semestre 3, spécialisation en Exploration, Modélisation Statistique, avec des projets orientés analyse, modélisation, datamining, Big Data et valorisation professionnelle.</p>
         </div>
       </div>
     </section>
